@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+/* 
+    colocar campo de pesquisa junto com o id
+    colocar flask com api de imagem
+    arrumar info repetidas
+ */
+:root {
+    --main-blue: rgb(122, 185, 236);
+    --main-blue2: rgb(92, 159, 214);
+    --main-black: rgb(58, 58, 58);
+    --main-white: rgb(228, 228, 228);
+}
+
+* {
+    margin: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
+}
+
+body {
+    background-image: linear-gradient(
+        to right, 
+        var(--main-blue), 
+        rgb(76, 164, 236)
+    );
+    color: var(--main-white);
+    text-align: center;
+}
+
+body h1,footer {
+    margin: 20px;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.158);
+}
+
+section {
+    max-width: 300px;
+    max-height: 180px;
+    margin: auto;
+    padding: 10px;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.158);
+    background-color: var(--main-white);
+    text-align: center;
+    height: auto;
+    color: var(--main-black);
+    overflow: hidden;
+}
+
+section p {
+    margin: 5px;
+    color: var(--main-black);
+}
+
+section input {
+    margin-top: 5px;
+    background-color: var(--main-white);
+    border-color: var(--main-black);
+    border-style: solid;
+    text-align: center;
+    padding: 3px 10px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.158);
+}
+
+#btn_search {
+    font-weight: bold;
+    border-color: var(--main-blue);
+    background-color: var(--main-blue);
+    color: var(--main-white);
+    cursor: pointer
+}
+
+#btn_search:active {
+    border-color: var(--main-blue2);
+    background-color: var(--main-blue2);
+    color: white;
+}
+
+#btn_more {
+    width: 320px;
+    padding: 7px 40px;
+    background-color: var(--main-white);
+    border-radius: 0px;
+    background-color: var(--main-blue);
+    color: var(--main-white);
+    font-weight: bold;
+    border: none;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.158);
+    cursor: pointer
+}
+
+.active_btn {
+    max-height: 100%;
+}
+
+@keyframes load {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#preload {
+    display: none;
+    width: 100px;
+    height: 100px;
+    background-image: url("https://1.bp.blogspot.com/-eOQT03M_t5k/X2NbBy6J_LI/AAAAAAAAAXU/wA6Xz3NVHJc-vQY1zv5XXpad4r-T9ksKQCLcBGAsYHQ/s2048/logo%2Bone%2Bpiece.png");
+    background-position: center;
+    background-size: contain;
+    animation: load 5s infinite linear;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#id_request {
+    margin-bottom: 30px;
+    text-align: left;
+}
