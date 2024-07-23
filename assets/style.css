@@ -25,17 +25,22 @@ body {
     );
     color: var(--main-white);
     text-align: center;
+    padding-top: 150px;
+    
 }
 
-body h1,footer {
-    margin: 20px;
+body h1, footer {
     text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.158);
+}
+
+body footer {
+    margin-top: 50px;
 }
 
 section {
     max-width: 300px;
     max-height: 180px;
-    margin: auto;
+    margin: 50px auto 0px;
     padding: 10px;
     box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.158);
     background-color: var(--main-white);

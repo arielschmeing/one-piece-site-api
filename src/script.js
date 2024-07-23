@@ -22,10 +22,13 @@ btn_search.addEventListener('click', async (event) => {
     loadbox.style.display = 'block'
     document.body.style.cursor = 'progress'
     
+    // Clear Div
+    content.textContent = ''
+
     event.preventDefault()
     const result = await fetchAPI(id_request.value)
     
-    // Clear Div
+    // Clear Div Again
     content.textContent = ''
 
     document.body.style.cursor = 'auto'
