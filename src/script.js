@@ -1,6 +1,7 @@
 const id_request = document.querySelector('#id_request')
 const btn_search = document.querySelector('#btn_search')
 const btn_more = document.querySelector('#btn_more')
+const btn_theme = document.querySelector('#btn_theme')
 
 const section_father = document.querySelector('#father')
 const content = document.querySelector('#content')
@@ -103,6 +104,7 @@ btn_search.addEventListener('click', async (event) => {
         // Button Read More
         btn_more.addEventListener('click', () => {
 
+            
             section_father.classList.toggle('active_btn')
 
             if(section_father.classList.contains('active_btn')) {
@@ -119,4 +121,22 @@ btn_search.addEventListener('click', async (event) => {
 
     }
     
+})
+
+btn_theme.addEventListener('click', () => {
+
+    section_father.classList.toggle('alter_theme')
+
+    if(section_father.classList.contains('alter_theme')) {
+        document.documentElement.style.setProperty('--main-blue', '#2c2f33')
+        document.documentElement.style.setProperty('--main-blue2', '#23272a')
+        document.documentElement.style.setProperty('--main-black', '#7289da')
+        document.documentElement.style.setProperty('--main-white', '#ffffff')
+    }else {
+        document.documentElement.style.setProperty('--main-blue', 'rgb(122, 185, 236)')
+        document.documentElement.style.setProperty('--main-blue2', 'rgb(92, 159, 214)')
+        document.documentElement.style.setProperty('--main-black', 'rgb(58, 58, 58)')
+        document.documentElement.style.setProperty('--main-white', 'rgb(228, 228, 228)')
+    }
+
 })
