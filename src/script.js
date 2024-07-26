@@ -128,11 +128,13 @@ btn_theme.addEventListener('click', () => {
     section_father.classList.toggle('alter_theme')
 
     if(section_father.classList.contains('alter_theme')) {
+        btn_theme.setAttribute('value','Mudar tema claro')
         document.documentElement.style.setProperty('--main-blue', '#2c2f33')
         document.documentElement.style.setProperty('--main-blue2', '#23272a')
         document.documentElement.style.setProperty('--main-black', '#7289da')
         document.documentElement.style.setProperty('--main-white', '#ffffff')
     }else {
+        btn_theme.setAttribute('value','Mudar tema escuro')
         document.documentElement.style.setProperty('--main-blue', 'rgb(122, 185, 236)')
         document.documentElement.style.setProperty('--main-blue2', 'rgb(92, 159, 214)')
         document.documentElement.style.setProperty('--main-black', 'rgb(58, 58, 58)')
