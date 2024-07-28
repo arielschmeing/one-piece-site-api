@@ -131,14 +131,16 @@ btn_theme.addEventListener('click', () => {
         btn_theme.setAttribute('value','Mudar tema claro')
         document.documentElement.style.setProperty('--main-blue', '#2c2f33')
         document.documentElement.style.setProperty('--main-blue2', '#23272a')
-        document.documentElement.style.setProperty('--main-black', '#7289da')
+        document.documentElement.style.setProperty('--main-black', 'rgb(58, 58, 58)')
         document.documentElement.style.setProperty('--main-white', '#ffffff')
+        document.documentElement.style.setProperty('--main_shadow', '#7289da8c')
     }else {
         btn_theme.setAttribute('value','Mudar tema escuro')
         document.documentElement.style.setProperty('--main-blue', 'rgb(122, 185, 236)')
         document.documentElement.style.setProperty('--main-blue2', 'rgb(92, 159, 214)')
         document.documentElement.style.setProperty('--main-black', 'rgb(58, 58, 58)')
         document.documentElement.style.setProperty('--main-white', 'rgb(228, 228, 228)')
+        document.documentElement.style.setProperty('--main_shadow', 'rgba(0, 0, 0, 0.158)')
     }
 
 })
