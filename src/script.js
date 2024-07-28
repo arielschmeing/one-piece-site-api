@@ -7,6 +7,16 @@ const section_father = document.querySelector('#father')
 const content = document.querySelector('#content')
 const loadbox = document.querySelector('#preload')
 
+const style = (c1, c2, c3, c4) => {
+
+    document.documentElement.style.setProperty('--main-blue', c1)
+    document.documentElement.style.setProperty('--main-blue2', c2)
+    document.documentElement.style.setProperty('--main-black', c3)
+    document.documentElement.style.setProperty('--main-white', c4)
+
+}
+
+
 const fetchAPI = (value) => {
 
     const result = fetch(`https://api.api-onepiece.com/v2/characters/en/${value}`)
@@ -17,6 +27,8 @@ const fetchAPI = (value) => {
     return result
 }
 
+
+// Main Aplication
 btn_search.addEventListener('click', async (event) => {
 
     // Requesting API
@@ -105,6 +117,8 @@ btn_search.addEventListener('click', async (event) => {
     
 })
 
+
+// Button More
 btn_more.addEventListener('click', () => {
 
     section_father.classList.toggle('active_btn')
@@ -121,20 +135,15 @@ btn_more.addEventListener('click', () => {
 
 })
 
+
+// Button Theme
 btn_theme.addEventListener('click', () => {
 
     section_father.classList.toggle('alter_theme')
 
-    const style = (c1, c2, c3, c4) => {
-
-        document.documentElement.style.setProperty('--main-blue', c1)
-        document.documentElement.style.setProperty('--main-blue2', c2)
-        document.documentElement.style.setProperty('--main-black', c3)
-        document.documentElement.style.setProperty('--main-white', c4)
-    
-    }
-
     if(section_father.classList.contains('alter_theme')) {
+
+        localStorage.setItem('theme', 'black')
 
         btn_theme.setAttribute('value','Mudar tema claro')
 
@@ -146,6 +155,8 @@ btn_theme.addEventListener('click', () => {
         )
         
     }else {
+
+        localStorage.setItem('theme', 'white')
 
         btn_theme.setAttribute('value','Mudar tema escuro')
 
@@ -159,3 +170,30 @@ btn_theme.addEventListener('click', () => {
     }
 
 })
+
+
+if(localStorage.getItem('theme') == 'black') {
+
+    section_father.classList.add('alter_theme')
+
+    btn_theme.setAttribute('value','Mudar tema claro')
+
+    style(
+        '#2c2f33',
+        '#23272a',
+        'rgb(58, 58, 58)',
+        '#d7d4d1'
+    )
+
+}else {
+
+    btn_theme.setAttribute('value','Mudar tema escuro')
+
+    style(
+        'rgb(122, 185, 236)',
+        'rgb(92, 159, 214)',
+        'rgb(58, 58, 58)',
+        'rgb(228, 228, 228)'
+    )
+
+}
