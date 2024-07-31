@@ -13,6 +13,21 @@ const section_father = document.querySelector('#father')
 const content = document.querySelector('#content')
 const loadbox = document.querySelector('#preload')
 
+// Values for Theme Dark and Light
+const theme_dark = [
+    '#2c2f33',
+    '#23272a',
+    'rgb(58, 58, 58)',
+    '#d7d4d1'
+]
+
+const theme_light = [
+    'rgb(122, 185, 236)',
+    'rgb(92, 159, 214)',
+    'rgb(58, 58, 58)',
+    'rgb(228, 228, 228)'
+]
+
 const style = (c1, c2, c3, c4) => {
 
     document.documentElement.style.setProperty('--main-blue', c1)
@@ -118,6 +133,7 @@ btn_search.addEventListener('click', async (event) => {
 
         id_request.focus()
 
+        // Add Object in historic and limite max historic
         history_characters.unshift(result)
 
         if(history_characters.length > 10) {
@@ -159,64 +175,29 @@ btn_theme.addEventListener('click', () => {
     if(section_father.classList.contains('alter_theme')) {
 
         localStorage.setItem('theme', 'black')
-
         btn_theme.setAttribute('value','Mudar tema claro')
-
-        style(
-            '#2c2f33',
-            '#23272a',
-            'rgb(58, 58, 58)',
-            '#d7d4d1'
-        )
+        style(...theme_dark)
         
     }else {
 
         localStorage.setItem('theme', 'white')
-
         btn_theme.setAttribute('value','Mudar tema escuro')
-
-        style(
-            'rgb(122, 185, 236)',
-            'rgb(92, 159, 214)',
-            'rgb(58, 58, 58)',
-            'rgb(228, 228, 228)'
-        )
+        style(...theme_light)
 
     }
 
 })
 
 
-// Button History
-// btn_history.addEventListener('click', () => {
-
-//     localStorage.setItem('characters', JSON.stringify(history_characters))
-
-// })
-
-
 if(localStorage.getItem('theme') == 'black') {
 
     section_father.classList.add('alter_theme')
-
     btn_theme.setAttribute('value','Mudar tema claro')
-
-    style(
-        '#2c2f33',
-        '#23272a',
-        'rgb(58, 58, 58)',
-        '#d7d4d1'
-    )
+    style(...theme_dark)
 
 }else {
 
     btn_theme.setAttribute('value','Mudar tema escuro')
-
-    style(
-        'rgb(122, 185, 236)',
-        'rgb(92, 159, 214)',
-        'rgb(58, 58, 58)',
-        'rgb(228, 228, 228)'
-    )
+    style(...theme_light)
 
 }

@@ -112,6 +112,12 @@ section input {
     background-color: var(--main-white);
     box-shadow: 0px 3px 5px var(--main_shadow);
     cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.btn_information:hover {
+    transition: all 0.5s ease;
+    box-shadow: 0px 0px 5px white;
 }
 
 .active_btn {
@@ -163,7 +169,6 @@ section input {
     margin: auto;
     border-radius: 25px;
 }
-
 #content_history {
     margin-bottom: 15px;
 }
