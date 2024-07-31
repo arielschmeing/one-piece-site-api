@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-/* 
-    colocar campo de pesquisa junto com o id
-    colocar flask com api de imagem
-    arrumar info repetidas
- */
 :root {
     --main-blue: rgb(122, 185, 236);
     --main-blue2: rgb(92, 159, 214);
@@ -15,6 +10,7 @@
 
 * {
     margin: 0px;
+    padding: 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
 }
 
@@ -39,7 +35,7 @@ body footer {
 
 section {
     max-width: 300px;
-    max-height: 180px;
+    max-height: 130px;
     margin: 50px auto 0px;
     padding: 10px;
     border-radius: 17px 17px 0px 0px;
@@ -49,7 +45,6 @@ section {
     height: auto;
     color: var(--main-black);
     overflow: hidden;
-    transition: none;
 }
 
 section p {
@@ -98,7 +93,11 @@ section input {
     transition: all 0.4s ease;
 }
 
-#btn_theme {
+#btn_history {
+    left: 170px;
+}
+
+.btn_information {
     position: absolute;
     left: 10px;
     top: 10px;
@@ -141,4 +140,14 @@ section input {
 #id_request {
     margin-bottom: 10px;
     text-align: left;
+}
+
+
+.history_section {
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+#title_history {
+    margin-bottom: 50px;
 }

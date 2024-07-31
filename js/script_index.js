@@ -1,7 +1,11 @@
 const id_request = document.querySelector('#id_request')
+
 const btn_search = document.querySelector('#btn_search')
 const btn_more = document.querySelector('#btn_more')
 const btn_theme = document.querySelector('#btn_theme')
+
+const btn_history = document.querySelector('#btn_history')
+let history_characters = JSON.parse(localStorage.getItem('characters'))
 
 const section_father = document.querySelector('#father')
 const content = document.querySelector('#content')
@@ -15,7 +19,6 @@ const style = (c1, c2, c3, c4) => {
     document.documentElement.style.setProperty('--main-white', c4)
 
 }
-
 
 const fetchAPI = (value) => {
 
@@ -113,6 +116,16 @@ btn_search.addEventListener('click', async (event) => {
 
         id_request.focus()
 
+        history_characters.unshift(result)
+
+        if(history_characters.length > 10) {
+
+            history_characters.pop()
+
+        }
+
+        localStorage.setItem('characters', JSON.stringify(history_characters))
+
     }
     
 })
@@ -170,6 +183,14 @@ btn_theme.addEventListener('click', () => {
     }
 
 })
+
+
+// Button History
+// btn_history.addEventListener('click', () => {
+
+//     localStorage.setItem('characters', JSON.stringify(history_characters))
+
+// })
 
 
 if(localStorage.getItem('theme') == 'black') {

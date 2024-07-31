@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Piece Characters</title>
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <input type="button" value="Mudar tema escuro" id="btn_theme">
+    
+    <input type="button" value="Mudar tema escuro" id="btn_theme" class="btn_information">
+    
+    <a href="history.html" target="_self" rel="next">
+        <input type="button" value="Ver Histórico" id="btn_history" class="btn_information">
+    </a>
 
     <h1>One Piece Characters</h1>
+
     <section id="father">
         <input type="number" name="id_request" id="id_request" placeholder="Coloque o ID:" min="1">
         <input type="button" value="Requisitar" id="btn_search">
@@ -20,12 +26,13 @@
         <p id="content"></p>
         
     </section>
+
     <input type="button" value="Ler mais" id="btn_more">
 
     <footer>
         <aside>&copy; Criado por LucherLL</aside>
     </footer>
 
-    <script src="./src/script.js"></script>
+    <script src="./js/script_index.js"></script>
 </body>
 </html>
