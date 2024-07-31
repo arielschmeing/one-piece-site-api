@@ -78,7 +78,7 @@ if(history_characters != null) {
 btn_historic.addEventListener('click', () => {
 
     if(history_characters == null) {
-        window.alert('Você não possui um histórico para excluir')
+        window.alert('Você não possui um histórico para ser excluir')
     }
 
     localStorage.removeItem('characters')
