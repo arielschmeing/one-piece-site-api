@@ -1,7 +1,7 @@
 const content = document.querySelector('#content_history')
 const history_characters = JSON.parse(localStorage.getItem('characters'))
 const master = document.querySelector('#master')
-
+const btn_historic = document.querySelector('#clear_historic')
 
 const style = (c1, c2, c3, c4) => {
 
@@ -34,8 +34,7 @@ if(localStorage.getItem('theme') == 'black') {
 
 }
 
-
-if(history_characters[0] != null) {
+if(history_characters != null) {
     content.innerHTML = ''
 }
 
@@ -47,17 +46,32 @@ const character_propries = Array.from({
     length: 7
 },() => document.createElement('p'))
 
-for(let i=0; i < history_characters.length ;i++) {
+if(history_characters != null) {
+
+    for(let i=0; i < history_characters.length ;i++) {
     
-    character_propries[i].innerHTML = `
-        ID: ${history_characters[i].id} <br>
-        Nome: ${history_characters[i].name}`
-
-    content.appendChild(character_propries[i])
-    document.body.appendChild(sections[i])
-    sections[i].appendChild(character_propries[i])
-    master.appendChild(sections[i])
-
-    sections[i].classList.add('history_section')
+        character_propries[i].innerHTML = `
+            ID: ${history_characters[i].id} <br>
+            Nome: ${history_characters[i].name}`
+    
+        content.appendChild(character_propries[i])
+        document.body.appendChild(sections[i])
+        sections[i].appendChild(character_propries[i])
+        master.appendChild(sections[i])
+    
+        sections[i].classList.add('history_section')
+    
+    }
 
 }
+
+btn_historic.addEventListener('click', () => {
+
+    if(history_characters == null) {
+        window.alert('Você não possui um histórico para excluir')
+    }
+
+    localStorage.removeItem('characters')
+    window.location.reload()
+
+})

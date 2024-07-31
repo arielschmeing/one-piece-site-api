@@ -93,13 +93,16 @@ section input {
     transition: all 0.4s ease;
 }
 
-#btn_history {
+.btn_pri {
+    left: 10px;
+}
+
+.btn_sec {
     left: 170px;
 }
 
 .btn_information {
     position: absolute;
-    left: 10px;
     top: 10px;
     border-style: none;
     border-radius: 15px;
@@ -144,9 +147,23 @@ section input {
 
 .history_section {
     border-radius: 4px;
-    margin-top: 15px;
+    margin: auto;
+    margin-bottom: 15px;
 }
 
 #title_history {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+}
+
+#master {
+    background-color: rgba(0, 0, 0, 0.11);
+    padding: 30px;
+    padding-top: 45px;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 25px;
+}
+
+#content_history {
+    margin-bottom: 15px;
 }
