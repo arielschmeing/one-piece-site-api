@@ -5,7 +5,9 @@ const btn_more = document.querySelector('#btn_more')
 const btn_theme = document.querySelector('#btn_theme')
 
 const btn_history = document.querySelector('#btn_history')
-let history_characters = JSON.parse(localStorage.getItem('characters'))
+
+let getChar = localStorage.getItem('characters')
+let history_characters = getChar != null ? JSON.parse(getChar) : []
 
 const section_father = document.querySelector('#father')
 const content = document.querySelector('#content')
