@@ -56,6 +56,7 @@ for(let i=0; i < history_characters.length ;i++) {
     content.appendChild(character_propries[i])
     document.body.appendChild(sections[i])
     sections[i].appendChild(character_propries[i])
+    master.appendChild(sections[i])
 
     sections[i].classList.add('history_section')
 
